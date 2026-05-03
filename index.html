@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="theme-color" content="#0d1f12"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="CalorieFit"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <link rel="icon" href="icons/icon-192.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>CalorieFit</title>
+</head>
+<body>
+
+<!-- Onboarding -->
+<div id="pg-onboard"></div>
+
+<!-- Main shell -->
+<div id="main-shell" style="display:none">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="logo">CalorieFit</span>
+      <span class="logo-sub" id="cuisine-tag"></span>
+    </div>
+    <div class="topbar-right">
+      <div class="cal-pill" id="top-pill"></div>
+      <button class="icon-btn" id="lang-btn" onclick="toggleLang()">🇮🇳</button>
+      <button class="icon-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+    </div>
+  </div>
+
+  <!-- Pages -->
+  <div id="pg-build"   class="page active"></div>
+  <div id="pg-results" class="page"></div>
+  <div id="pg-log"     class="page"></div>
+  <div id="pg-algo"    class="page"></div>
+  <div id="pg-profile" class="page"></div>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav">
+    <button class="nav-tab active" id="tab-build"   onclick="goTo('build')">  <span class="ni">🍽️</span>Build</button>
+    <button class="nav-tab"        id="tab-results" onclick="goTo('results')"><span class="ni">⚡</span>Results</button>
+    <button class="nav-tab"        id="tab-log"     onclick="goTo('log')">    <span class="ni">📅</span>Log</button>
+    <button class="nav-tab"        id="tab-algo"    onclick="goTo('algo')">   <span class="ni">🧠</span>Algo</button>
+    <button class="nav-tab"        id="tab-profile" onclick="goTo('profile')"><span class="ni">👤</span>Profile</button>
+  </nav>
+</div>
+
+<!-- Modal -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+<div id="modal-box" class="modal-box"></div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<!-- Hidden canvas for share -->
+<canvas id="share-canvas" style="display:none"></canvas>
+
+<script src="app.js"></script>
+</body>
+</html>
